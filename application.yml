@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5322/jobtracker
+    url: jdbc:postgresql://localhost:5433/jobtracker
     username: postgres
     password: postgres
 
@@ -12,6 +12,11 @@ spring:
     flyway:
       enabled: true
       locations: classpath:db/migration
+
+jwt:
+  secret: my-super-secret-key-that-is-at-least-32-characters-long
+  expiration: 86400000
+
 
 server:
   port: 8080
