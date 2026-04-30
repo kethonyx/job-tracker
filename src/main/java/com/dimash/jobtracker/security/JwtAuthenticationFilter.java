@@ -36,6 +36,14 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             return;
         }
 
+        if (request.getMethod().equals("OPTIONS")) {
+
+            filterChain.doFilter(request, response);
+
+            return;
+
+        }
+
         String token = header.substring(7);
         System.out.println("TOKEN: " + token);
 
