@@ -1,6 +1,22 @@
 # JobTracker
 
-JobTracker is a full-stack web application for managing a personal job search. It lets users register, sign in, and track applications across different stages with a clean dashboard and protected API.
+Live Demo: https://kethonyx-job-tracker.vercel.app/
+
+🌐 **Live Demo:** https://kethonyx-job-tracker.vercel.app/
+
+⚙️ **Backend API:** https://job-tracker-production-ade8.up.railway.app
+
+## Screenshots
+
+### Login
+
+![Login](assets/login.png)
+
+### Dashboard
+![Dashboard](assets/dashboard.png)
+
+### Filter
+![Filter](assets/filter.png)
 
 ## Overview
 
