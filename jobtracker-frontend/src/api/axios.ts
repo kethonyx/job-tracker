@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_URL ?? "http://localhost:8080/api",
+  baseURL: import.meta.env.VITE_API_URL ?? "https://job-tracker-production-ade8.up.railway.app",
 });
 
 API.interceptors.request.use((config) => {
