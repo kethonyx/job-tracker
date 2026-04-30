@@ -8,6 +8,7 @@ import com.dimash.jobtracker.entity.User;
 import com.dimash.jobtracker.repository.UserRepository;
 import com.dimash.jobtracker.service.AuthService;
 import com.dimash.jobtracker.util.SecurityUtil;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,7 +21,7 @@ public class AuthController {
     private final UserRepository userRepository;
 
     @PostMapping("/register")
-    public UserResponse register(@RequestBody RegisterRequest request){
+    public UserResponse register(@Valid @RequestBody RegisterRequest request){
 
         User user = authService.register(request);
 
@@ -32,21 +33,29 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public AuthResponse login(@RequestBody LoginRequest request){
+    public AuthResponse login(@Valid @RequestBody LoginRequest request){
         return authService.login(request);
     }
 
     @GetMapping("/me")
+
     public UserResponse me() {
 
         String email = SecurityUtil.getCurrentUserEmail();
+
         User user = userRepository.findByEmail(email)
+
                 .orElseThrow();
 
         return new UserResponse(
+
                 user.getId(),
+
                 user.getName(),
+
                 user.getEmail()
+
         );
+
     }
 }

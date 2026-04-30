@@ -1,13 +1,11 @@
 package com.dimash.jobtracker.dto.auth;
 
-public class UserResponse {
+public record UserResponse(
 
-    private Long id;
+        Long id,
 
-    private String name;
+        String name,
 
-    private String email;
+        String email
 
-    public UserResponse(Long id, String name, String email) {
-    }
-}
+) {}
