@@ -33,7 +33,7 @@ export default function Login() {
     setMessageTone("error");
 
     try {
-      const response = await API.post("/api/auth/login", { email, password });
+      const response = await API.post("/auth/login", { email, password });
       localStorage.setItem("token", response.data.token);
       navigate("/dashboard");
     } catch (error) {
@@ -56,7 +56,7 @@ export default function Login() {
     setMessageTone("error");
 
     try {
-      await API.post("/api/auth/register", registerForm);
+      await API.post("/auth/register", registerForm);
       setMode("login");
       setEmail(registerForm.email);
       setPassword(registerForm.password);
